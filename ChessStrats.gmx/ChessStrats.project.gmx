@@ -5,9 +5,25 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_white</sprite>
+    <sprite>sprites\spr_black</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\chessBoard</background>
+  </backgrounds>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_whitePawn</object>
+    <object>objects\obj_whiteKnight</object>
+    <object>objects\obj_whiteRook</object>
+    <object>objects\obj_whiteBishop</object>
+    <object>objects\obj_whiteQueen</object>
+    <object>objects\obj_whiteKing</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\room0</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
