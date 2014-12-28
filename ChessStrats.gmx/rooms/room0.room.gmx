@@ -13,7 +13,9 @@
   <code>global.active = 0;
 global.gotoX = 0;
 global.gotoY = 0;
-global.moving = false;</code>
+global.moving = false;
+global.selected = false;
+global.turn = 1;</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

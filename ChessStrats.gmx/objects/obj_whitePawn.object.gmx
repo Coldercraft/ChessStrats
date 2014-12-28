@@ -92,14 +92,18 @@ selected = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not selected {
-    selected = true;
-    if y == 1768{
-        instance_create(x,y-544,obj_select);
+            <string>if not selected{
+    if not global.selected{
+        selected = true;
+        global.selected = true;
+        if y == 1768{
+            instance_create(x,y-544,obj_select);
+        }
+        instance_create(x,y-272,obj_select);
     }
-    instance_create(x,y-272,obj_select);
 }else{
     selected = false;
+    global.selected = false;
     with (obj_select){
         instance_destroy()
     }
