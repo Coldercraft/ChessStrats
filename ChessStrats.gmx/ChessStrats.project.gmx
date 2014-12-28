@@ -8,18 +8,30 @@
   <sprites name="sprites">
     <sprite>sprites\spr_white</sprite>
     <sprite>sprites\spr_black</sprite>
+    <sprite>sprites\spr_select</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\chessBoard</background>
   </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_whitePawn</object>
-    <object>objects\obj_whiteKnight</object>
-    <object>objects\obj_whiteRook</object>
-    <object>objects\obj_whiteBishop</object>
-    <object>objects\obj_whiteQueen</object>
-    <object>objects\obj_whiteKing</object>
+    <objects name="White">
+      <object>objects\obj_whitePawn</object>
+      <object>objects\obj_whiteQueen</object>
+      <object>objects\obj_whiteKing</object>
+      <object>objects\obj_whiteBishop</object>
+      <object>objects\obj_whiteRook</object>
+      <object>objects\obj_whiteKnight</object>
+    </objects>
+    <objects name="Black">
+      <object>objects\obj_blackKing</object>
+      <object>objects\obj_blackQueen</object>
+      <object>objects\obj_blackBishop</object>
+      <object>objects\obj_blackKnight</object>
+      <object>objects\obj_blackRook</object>
+      <object>objects\obj_blackPawn</object>
+    </objects>
+    <object>objects\obj_select</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
