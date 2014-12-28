@@ -25,6 +25,7 @@
       <object>objects\obj_whiteBishop</object>
       <object>objects\obj_whiteRook</object>
       <object>objects\obj_whiteKnight</object>
+      <object>objects\obj_whitePeice</object>
     </objects>
     <objects name="Black">
       <object>objects\obj_blackKing</object>
