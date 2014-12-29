@@ -157,6 +157,12 @@ selected = false;
     with (obj_highlight){
         instance_destroy()
     }
+    with (obj_takeWhitePiece){
+        instance_destroy();
+    }
+    with (obj_takeBlackPiece){
+        instance_destroy();
+    }
 
 }
 </string>

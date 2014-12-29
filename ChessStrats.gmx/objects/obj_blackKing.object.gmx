@@ -126,25 +126,14 @@ canCastle = true;
         selected = true;
         instance_create(x,y,obj_highlight);
         global.selected = true;
-        for (i=1;i&lt;2;i++){
-            if instance_position(x,y-(i*272),obj_whitePiece)||instance_position(x,y-(i*272),obj_blackPiece){ break;}
-            instance_create(x,y-(i*272),obj_select);
-        }
-        for (i=1;i&lt;2;i++){
-            if instance_position(x,y+(i*272),obj_whitePiece)||instance_position(x,y+(i*272),obj_blackPiece){break;}
-            instance_create(x,y+(i*272),obj_select);
-        }
-        for (i=1;i&lt;2;i++){
-            if instance_position(x+(i*272),y,obj_whitePiece)||instance_position(x+(i*272),y,obj_blackPiece){break;}
-            instance_create(x+(i*272),y,obj_select);
-        }
-        for (i=1;i&lt;2;i++){
-            if instance_position(x-(i*272),y,obj_whitePiece)||instance_position(x-(i*272),y,obj_blackPiece){break;}
-            instance_create(x-(i*272),y,obj_select);
-        }
-        if instance_position(x+816,y,obj_blackRook) and canCastle{
-            instance_create(x+544,y,obj_blackCastle);
-        }
+    instance_create(x+272,y+272,obj_select);
+        instance_create(x+272,y-272,obj_select);
+        instance_create(x+272,y,obj_select);
+        instance_create(x-272,y+272,obj_select);
+        instance_create(x-272,y-272,obj_select);
+        instance_create(x-272,y,obj_select);
+        instance_create(x,y+272,obj_select);
+        instance_create(x,y-272,obj_select);
         
 
     }
@@ -156,6 +145,9 @@ canCastle = true;
     }
     with (obj_highlight){
         instance_destroy()
+    }
+    with (obj_blackCastle){
+        instance_destroy();
     }
 
 }
