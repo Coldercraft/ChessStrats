@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_whitePiece</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -78,6 +78,34 @@ selected = false;
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>-1</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.turn mod 2</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -92,16 +120,28 @@ selected = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if not selected{
+            <string>
+if not selected{
     if not global.selected{
+        instance_create(x,y,obj_highlight);
         selected = true;
         global.selected = true;
-        if y == 1768{
-            if instance_position(x,y-272,obj_whitePeice){
-                instance_create(x,y-544,obj_select);
+        if not instance_position(x,y-272,obj_whitePiece) and not instance_position(x,y-272,obj_blackPiece){
+            if y == 1768 &amp;&amp; !instance_position(x,y-544,obj_whitePiece) &amp;&amp; !instance_position(x,y-544,obj_blackPiece){
+
+                    instance_create(x,y-544,obj_select);
+                
+        
             }
+            instance_create(x,y-272,obj_select);
         }
-        instance_create(x,y-272,obj_select);
+        if instance_position(x+272,y-272,obj_blackPiece){
+            instance_create(x+272,y-272,obj_takeBlackPiece);
+        }
+        if instance_position(x-272,y-272,obj_blackPiece){
+            instance_create(x-272,y-272,obj_takeBlackPiece);
+        }
+        
     }
 }else{
     selected = false;
@@ -109,8 +149,17 @@ selected = false;
     with (obj_select){
         instance_destroy()
     }
-
+    with (obj_highlight){
+        instance_destroy();
+    }
+    with (obj_takeWhitePiece){
+        instance_destroy()
+    }    
+    with (obj_takeBlackPiece){
+        instance_destroy()
+    }
 }
+
 </string>
           </argument>
         </arguments>

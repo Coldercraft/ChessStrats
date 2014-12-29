@@ -9,6 +9,9 @@
     <sprite>sprites\spr_white</sprite>
     <sprite>sprites\spr_black</sprite>
     <sprite>sprites\spr_select</sprite>
+    <sprite>sprites\spr_highlight</sprite>
+    <sprite>sprites\spr_special</sprite>
+    <sprite>sprites\spr_takePiece</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\chessBoard</background>
@@ -25,17 +28,23 @@
       <object>objects\obj_whiteBishop</object>
       <object>objects\obj_whiteRook</object>
       <object>objects\obj_whiteKnight</object>
-      <object>objects\obj_whitePeice</object>
     </objects>
     <objects name="Black">
-      <object>objects\obj_blackKing</object>
-      <object>objects\obj_blackQueen</object>
-      <object>objects\obj_blackBishop</object>
-      <object>objects\obj_blackKnight</object>
-      <object>objects\obj_blackRook</object>
       <object>objects\obj_blackPawn</object>
+      <object>objects\obj_blackQueen</object>
+      <object>objects\obj_blackKing</object>
+      <object>objects\obj_blackBishop</object>
+      <object>objects\obj_blackRook</object>
+      <object>objects\obj_blackKnight</object>
     </objects>
+    <object>objects\obj_whitePiece</object>
+    <object>objects\obj_blackPiece</object>
     <object>objects\obj_select</object>
+    <object>objects\obj_highlight</object>
+    <object>objects\obj_whiteCastle</object>
+    <object>objects\obj_blackCastle</object>
+    <object>objects\obj_takeWhitePiece</object>
+    <object>objects\obj_takeBlackPiece</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

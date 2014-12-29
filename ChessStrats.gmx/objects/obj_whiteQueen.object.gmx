@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_whitePiece</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -78,6 +78,34 @@ selected = false;
     <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>-1</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.turn mod 2</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -95,16 +123,57 @@ selected = false;
             <string>if not selected{
     if not global.selected{
         selected = true;
+        instance_create(x,y,obj_highlight);
         global.selected = true;
-        for (i=-8;i&lt;9;i++){
+        for (i=1;i&lt;9;i++){
+            instance_create(x,y-(i*272),obj_select);
+            if instance_position(x,y-(i*272),obj_whitePiece)||instance_position(x,y-(i*272),obj_blackPiece){ break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
             instance_create(x,y+(i*272),obj_select);
+            if instance_position(x,y+(i*272),obj_whitePiece)||instance_position(x,y+(i*272),obj_blackPiece){break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
+            instance_create(x+(i*272),y,obj_select);
+            if instance_position(x+(i*272),y,obj_whitePiece)||instance_position(x+(i*272),y,obj_blackPiece){break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
+            instance_create(x-(i*272),y,obj_select);
+            if instance_position(x-(i*272),y,obj_whitePiece)||instance_position(x-(i*272),y,obj_blackPiece){break;}
+            
         }
         
+        for (i=1;i&lt;9;i++){
+            instance_create(x+(i*272),y+(i*272),obj_select);
+            if instance_position(x+(i*272),y+(i*272),obj_whitePiece)||instance_position(x+(i*272),y+(i*272),obj_blackPiece){break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
+            instance_create(x-(i*272),y+(i*272),obj_select);
+            if instance_position(x-(i*272),y+(i*272),obj_whitePiece)||instance_position(x-(i*272),y+(i*272),obj_blackPiece){break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
+            instance_create(x-(i*272),y-(i*272),obj_select);
+            if instance_position(x-(i*272),y-(i*272),obj_whitePiece)||instance_position(x-(i*272),y-(i*272),obj_blackPiece){break;}
+            
+        }
+        for (i=1;i&lt;9;i++){
+            instance_create(x+(i*272),y-(i*272),obj_select);
+            if instance_position(x+(i*272),y-(i*272),obj_whitePiece)||instance_position(x+(i*272),y-(i*272),obj_blackPiece){break;}
+            
+        }
     }
 }else{
     selected = false;
     global.selected = false;
     with (obj_select){
+        instance_destroy()
+    }
+    with (obj_highlight){
         instance_destroy()
     }
 
